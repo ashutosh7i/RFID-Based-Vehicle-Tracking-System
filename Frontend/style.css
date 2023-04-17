@@ -1,0 +1,433 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    /* overflow: hidden; */
+    background-color: #333;
+    font-family: Arial;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    position: sticky;
+    top :0;
+    z-index: 33;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+    transition: 1s ease ease-in-out;
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    transform: scale(1.1);
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+    background: none;
+    
+
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    transition: 5s ease-in;
+    display: block;
+  }
+
+  .section h2{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  table{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 50vh;   */
+    /* margin-top: 30px;
+    position: relative; */
+    border-collapse: collapse;
+    width: 100vw;
+    /* padding: 10px 20px; */
+  
+
+  }
+  
+ th, td {
+  border:1px solid black;
+  padding: 10px 50px;
+  margin: 20px;
+  text-align: left;
+
+}
+th {
+  background-color: #4285f4;
+  color: white;
+  padding: 10px 80px;
+  position: relative;
+}
+tr:nth-child(even) {
+  background-color: #fffbfb;
+}
+
+tbody{
+  height: 50vh;
+ margin-left: 56%;
+ width: 100vw;
+ position: absolute;
+ margin-top: 30%;
+ 
+ /* right: inherit */
+ /* position: relative; */
+ 
+}
+td{
+  padding: 10px 63px;
+  text-align: left;
+  border-radius: 8px;
+  /* padding-right: 50px; */
+  /* width: auto; */
+  
+}
+
+.DashBoard{
+    position: relative;
+  display: inline-block;
+}
+.dashboard-content{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dashboard-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .DashBoard:hover.dashboard-content {
+    display: block;
+}
+
+.button{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 85%;
+}
+.prev{
+    padding: 10px 20px;
+    background-color: #333;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}  
+.next{
+    padding: 10px 20px ;
+    margin-left: 12px;
+    background-color: #333;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+.fotter{
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 85px;
+  padding-top: 2%;
+  margin-top: 85%;
+}
+.fotter p{
+  font-family: sans serif, arial or verdana;
+  font-size: 17px;
+  font-weight: bolder;
+  color: white;
+}
+.fotter-links li{
+  display: inline-block;
+  list-style: none;
+  padding: 10px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  }
+.fotter-links li a{
+  color: white;
+  text-decoration: none;
+}
+.logo{
+  color: white;
+  margin-left: 3px;
+  font-size: 25px;
+  font-family:'Tilt Warp', cursive;
+  /* width: 25%; */
+  padding-left: 3%;
+}
+.logo img{
+  width: 25px;
+
+}
+
+* Global Styles */
+
+/* Set up default font and color */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+/* Add some padding and margins to elements */
+header, main {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h1, h2 {
+  margin-top: 0;
+}
+
+/* Style the header */
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+/* Style the main content */
+main {
+  background-color: #f5f5f5;
+}
+
+/* Style the sections */
+section {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+}
+
+/* Style the features list */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Add media queries for smaller screens */
+* Global Styles */
+
+/* Set up default font and color */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+/* Add some padding and margins to elements */
+header, main {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h1, h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* Style the header */
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+/* Style the main content */
+main {
+  background-color: #f5f5f5;
+}
+
+/* Style the sections */
+section {
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+}
+
+/* Style the features list */
+ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+p{
+  text-align: center;
+}
+.icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+}
+.icon a{
+  color: black;
+  font-size: 30px;
+  padding: 10px 20px;
+  transition: 0.2s ease-in-out;
+}
+.icon a:hover{
+  transform: scale(1.5);
+  /* color: orangered; */
+}
+
+/* Add media queries for smaller screens */
+@media only screen and (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
+
+
+/* adding styling to how it works page */
+
+#how-it-works {
+  text-align: center;
+  /* margin: 50px 0; */
+}
+
+.roadmap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.step {
+  position: relative;
+  width: 33.33%;
+  padding: 50px 30px;
+  text-align: center;
+  color: #555;
+}
+/* 
+.step::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ddd;
+} */
+
+.step:first-child::before {
+  display: none;
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+.step.active h3 {
+  color: #0f7c6a;
+}
+
+.step.active::before {
+  background-color: #0f7c6a;
+}
+
+.step-number {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #0f7c6a;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .step {
+    width: 50%;
+  }
+  
+  .step:last-child {
+    padding-bottom: 50px;
+  }
+}

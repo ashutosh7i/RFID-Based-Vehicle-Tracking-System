@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fastage</title>
+  
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/244bcbfcc1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container" style="height:100vh;">
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn">Dashboard
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="index.html">Current data</a>
+                    <a href="back.html">Back data</a>
+                </div>
+            </div>
+            <a href="about.html">About </a>
+            <a href="work.html">How it works</a>
+        </div>
+        
+        <div class="section">
+            <h2>Card Details :</h2>
+            <table id="cardDataTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>UID</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        
+        <footer >
+            <div class="fotter" style=" position: relative;">
+                <p>&copy; copyrights Reserved 2025 &nbsp; &nbsp; 
+                    @Gantavya Malviya</p>
+                <div class="fotter-links">
+                    <ul>
+                        <li><a href="#">Terms & Condition</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="contact.html">Contact </a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+  
+    <script>
+        async function getData() {
+            const response = await fetch('http://165.232.180.53/getdata');
+            const data = await response.json();
+            data.reverse(); // Reverse the order of the array
+            const tableBody = document.querySelector('#cardDataTable tbody');
+            tableBody.innerHTML = '';
+            data.forEach((item) => {
+                const row = document.createElement('tr');
+                const idCell = document.createElement('td');
+                const uidCell = document.createElement('td');
+                const timestampCell = document.createElement('td');
+                idCell.textContent = item.id;
+                uidCell.textContent = item.uid;
+                timestampCell.textContent = new Date(item.timestamp).toLocaleString();
+                row.appendChild(idCell);
+                row.appendChild(uidCell);
+                row.appendChild(timestampCell);
+                tableBody.appendChild(row);
+            });
+        }
+
+        getData();
+        setInterval(getData, 5000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Data Table</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        text-align: left;
+        padding: 8px;
+      }
+      th {
+        background-color: #4285f4;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Card Data Table</h1>
+    <table id="cardDataTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>UID</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <script>
+      async function getData() {
+        const response = await fetch('http://165.232.180.53/getdata');
+        const data = await response.json();
+        data.reverse(); // Reverse the order of the array
+        const tableBody = document.querySelector('#cardDataTable tbody');
+        tableBody.innerHTML = '';
+        data.forEach((item) => {
+          const row = document.createElement('tr');
+          const idCell = document.createElement('td');
+          const uidCell = document.createElement('td');
+          const timestampCell = document.createElement('td');
+          idCell.textContent = item.id;
+          uidCell.textContent = item.uid;
+          timestampCell.textContent = new Date(item.timestamp).toLocaleString();
+          row.appendChild(idCell);
+          row.appendChild(uidCell);
+          row.appendChild(timestampCell);
+          tableBody.appendChild(row);
+        });
+      }
+
+      getData();
+      setInterval(getData, 5000);
+    </script>
+  </body>
+</html>
