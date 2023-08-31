@@ -3,11 +3,11 @@ const express = require('express');
 const cors = require('cors');
 
 const pool = new Pool({
-    user: 'doadmin',
-    host: 'fasttag-postgresql-do-user-11037981-0.b.db.ondigitalocean.com',
-    database: 'defaultdb',
-    password: 'AVNS_dAQ52hghuOU4VKQ4Lfd',
-    port: 25060,
+    user: 'UserName',
+    host: 'host://ip/url.domain',
+    database: 'DataDB',
+    password: 'asecurepassword',
+    port: 80808,
     ssl: {
         rejectUnauthorized: false,
     },
